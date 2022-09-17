@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="home-container">
+    <div class="all-movies">
+        <div class="movies-list">
+            <div class="banner">
+                <div class="head">Trending Movies</div>
+                <div class="view-all">View All</div>
+            </div>
+            <div class="trending-movies ">
+                <div class="movies" *ngFor="let movie of trendingMovies">
+                    <div class="cover">
+                        <img [src]=movie.cover alt="movie-image">
+                    </div>
+                    <div class="details">
+                        <div class="movie-name">{{movie.name}}</div>
+                        <app-rating [ratings]="movie.rating" [isReadOnly]="true"></app-rating>
+                        <!-- <div class="ratings">{{movie.rating}}</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+<hr>
+        <!-- theatre movies -->
+
+        <div class="movies-list m-20">
+            <div class="banner">
+                <div class="head">Popular in Theatre</div>
+                <div class="view-all">View All</div>
+            </div>
+            <div class="trending-movies">
+                <div class="movies" *ngFor="let movie of theatreMovies">
+                    <div class="cover">
+                        <img [src]=movie.cover alt="movie-image">
+                    </div>
+                    <div class="details">
+                        <div class="movie-name">{{movie.name}}</div>
+                        <div class="ratings">{{movie.rating}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="popular-movies">
+        <div class="title">All Time Popular</div>
+        <div class="movie-details" *ngFor="let movie of popularMovies">
+            <div class="right">
+                <!-- <img [src]="movie.cover" alt="movie-img"> -->
+                <div class="movie-name">{{movie.name}}</div>
+            </div>
+            <div class="left">
+                <div class="rating">{{movie.rating}}</div>
+            </div>
+        </div>
+    </div>
+</div>

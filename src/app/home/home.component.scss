@@ -1,0 +1,37 @@
+.home-container{
+    display: flex;
+}
+.all-movies{
+    width: 70%;
+    border-right: 2px solid black;
+    min-height: calc(100vh - 80px );
+    padding: 20px;
+}
+.popular-movies{
+    width: 30%;
+    min-height: calc(100vh - 80px );
+}
+.banner{
+    display: flex;
+   
+}
+.banner .view-all{
+    padding-left: 80%;
+    cursor: pointer;
+}
+.trending-movies{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.movie-details{
+    display: flex;
+    padding: 15px 20px;
+}
+.left{
+    text-align: right;
+}
+

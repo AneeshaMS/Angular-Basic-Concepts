@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+
+<div class="login">
+    <div class="login-text ">
+        <div class="login-title">
+            <h1>HOTFLIX</h1>
+        </div>
+        <div class="login-des">
+            <p>Movies are made to entertain audiences, and movie websites are much the same. 
+                In order to get visitors’ attention and encourage them to see the movie, 
+                a website needs to give them what they are looking for and provide some entertainment at the same time. 
+                Today’s movie websites make it easy to take a couple minutes and watch a few trailers before deciding which movie to see.</p>
+        </div>
+    </div>
+        <div class="login-form">
+            <div class="error">{{errorMsg}}</div>
+            <div class="form-group">
+                <label for="uname">Username</label><br>
+                <input type="text" name="uname" [(ngModel)]="userName">
+               
+            </div>
+            <div class="form-group">
+                <label for="pword">Password</label><br>
+                <input type="password" name="pword" [(ngModel)]="password" >
+              
+            </div>
+            <br>
+            <button class="btn btn-dark" (click)="onLogin()" >Login</button>
+        </div>
+    </div>
+
+</div>
