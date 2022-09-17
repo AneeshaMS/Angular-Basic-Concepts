@@ -9,12 +9,15 @@
             <div class="trending-movies ">
                 <div class="movies" *ngFor="let movie of trendingMovies">
                     <div class="cover">
-                        <img [src]=movie.cover alt="movie-image">
+                        <img [src]=movie.cover alt="movie-image" (click)="goToMovies('trending',movie.id)">
                     </div>
                     <div class="details">
-                        <div class="movie-name">{{movie.name}}</div>
-                        <app-rating [ratings]="movie.rating" [isReadOnly]="true"></app-rating>
-                        <!-- <div class="ratings">{{movie.rating}}</div> -->
+                        <div class="movie-name" (click)="goToMovies('trending',movie.id)">{{movie.name}}</div>
+                        <div class="rate d-flex">
+                            <app-rating  [ratings]="movie.rating" [isReadOnly]="true"></app-rating>
+                            &nbsp;
+                            <div class="ratings">{{movie.rating}}</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -30,11 +33,15 @@
             <div class="trending-movies">
                 <div class="movies" *ngFor="let movie of theatreMovies">
                     <div class="cover">
-                        <img [src]=movie.cover alt="movie-image">
+                        <img [src]=movie.cover alt="movie-image" (click)="goToMovies('theatre',movie.id)">
                     </div>
                     <div class="details">
-                        <div class="movie-name">{{movie.name}}</div>
+                        <div class="movie-name" (click)="goToMovies('theatre',movie.id)">{{movie.name}}</div>
+                  <div class="rate d-flex">
+                        <app-rating  [ratings]="movie.rating" [isReadOnly]="true"></app-rating>
+                        &nbsp;
                         <div class="ratings">{{movie.rating}}</div>
+                    </div> 
                     </div>
                 </div>
             </div>
@@ -45,11 +52,15 @@
         <div class="title">All Time Popular</div>
         <div class="movie-details" *ngFor="let movie of popularMovies">
             <div class="right">
-                <!-- <img [src]="movie.cover" alt="movie-img"> -->
-                <div class="movie-name">{{movie.name}}</div>
+                <img [src]="movie.cover" alt="movie-img" (click)="goToMovies('popular',movie.id)"> 
             </div>
             <div class="left">
-                <div class="rating">{{movie.rating}}</div>
+                <div class="movie-name" (click)="goToMovies('popular',movie.id)">{{movie.name}}</div>
+                <div class="rate d-flex">
+                    <app-rating  [ratings]="movie.rating" [isReadOnly]="true"></app-rating>
+                    &nbsp;
+                    <div class="ratings">{{movie.rating}}</div>
+                </div>
             </div>
         </div>
     </div>

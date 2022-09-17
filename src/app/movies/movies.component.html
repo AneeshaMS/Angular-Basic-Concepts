@@ -1,1 +1,67 @@
-<p>movies works!</p>
+<app-header></app-header>
+<div class="movie-container">
+    <div class="top">
+        <div class="left"> 
+                <div class="name">{{movie?.name}}</div>
+                <div class="star-ratings">
+                    <div class="rate d-flex">
+                        <app-rating  [ratings]="movie?.rating" [isReadOnly]="true"></app-rating>
+                        &nbsp;
+                        <div class="ratings">{{movie?.rating}}</div>
+                    </div>   
+            </div>
+            <div class="cover">
+                <img [src]="movie?.cover" alt="movie-image">
+            </div>
+        </div>
+        <div class="right">
+           <div class="title">
+            Rate this Movie
+           </div>
+                <div class="review-form">
+                    <div class="form-group">
+                        <label for="uname">UserName</label><br>
+                        <input type="text" name="uname">
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Ratings</label><br>
+                        <app-rating  [ratings]="0" [isReadOnly]="false"></app-rating>
+                    </div>
+                    <div class="form-group">
+                        <label for="add">Add Your Review</label><br>
+                        <textarea name="add=review" rows="3"></textarea>
+                    </div>
+                    <div class="review-button">
+                        <button class="btn btn-dark">Add Review</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="reviews">Reviews</div>
+        <div class="isReviewAvailable" *ngIf="movie?.review?.length>0"> 
+        <div class="review" *ngFor="let review of movie.reviews" >
+                      
+            <div class="rev" >
+            <div class="author d-flex">
+                <div class="author-name">{{review.author}}</div>
+                &nbsp;
+            <div class="date">{{review.published_on}}</div>
+            </div> 
+
+            <div class="rate d-flex">
+                <app-rating  [ratings]="review.rating" [isReadOnly]="true"></app-rating>
+                &nbsp;
+                <div class="ratings">{{review.rating}}</div>
+            </div> 
+        </div>
+            <div class="title">{{review.review}}</div>  
+        </div>
+        <div class="noReviews" *ngIf="movie?.review?.length===0">
+            <div class="noReviewMsg">
+                No reviews Yet
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
